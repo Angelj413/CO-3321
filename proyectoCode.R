@@ -6,6 +6,7 @@ Nombre: Angel Morante
 Proyecto
 '
 
+
 #Lectura de la base de datos (NOTA: configurar working space)
 file <- 'datosproy.txt'
 datos <- read.table(file, header = TRUE, sep = "\t")
@@ -177,13 +178,18 @@ plot(multiMod4, main = "Modelo Multiple Más Apropiado")
 ###################################################
 #H0: med = 150
 #Ha: med > 150
-
+# alfa : 0.01
 #find de stadistic Z
 #ventas_region1
-Ho <- 150
+Ho <- 150/length(ventas_region1)
 str(mean(ventas_region1))
 z <- mean(ventas_region1) -Ho / (sd(ventas_region1)/ sqrt(length(ventas_region1)))
-z
+print(z)
+#Zalfa : 2.33
+# RR: {Zalfa > 2.33}
 p_valor <- pnorm(z, lower.tail=FALSE)
 p_valor
+
+###################################################
+###################################################
 
