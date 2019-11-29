@@ -241,3 +241,13 @@ predictionEbay =predict(modeloEbay,newEbay,interval="prediction")# Intervalo de 
 confidenceEbay =predict(modeloEbay,newEbay,interval='confidence')# Intervalo de confianza del 95%
 matplot(newEbay$ebay,cbind(predictionEbay, confidenceEbay[,-1]), lty=c(1,2,2,3,3),
         type="l", ylab="Predicción de ventas en millones para Ebay", xlab="Presupuesto de Inversion")
+
+
+###################################################
+###################################################
+#ANOVA
+#alfa: 0.03
+par(mfrow = c(1, 1) ) # para dibujar dos graficos en una misma página:
+boxplot(split(ventas,regiones), col = "orange", horizontal = F, xlab = "Ventas", main="Boxplot de VentasxRegion")
+mod_lm = lm(ventas~regiones)
+anova(mod_lm)
