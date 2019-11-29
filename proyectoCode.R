@@ -192,4 +192,52 @@ p_valor
 
 ###################################################
 ###################################################
+#Predicciones
 
+#Facebook
+newFacebook=data.frame(facebook=c(300,320,338,350,400))# valores con los que se van a
+#predecir la concentración de Ozono
+predictionFacebook =predict(modeloFacebook,newFacebook,interval="prediction")# Intervalo de prediccion
+confidenceFacebook =predict(modeloFacebook,newFacebook,interval='confidence')# Intervalo de confianza del 95%
+matplot(newFacebook$facebook,cbind(predictionFacebook, confidenceFacebook[,-1]), lty=c(1,2,2,3,3),
+        type="l", ylab="Predicción de ventas en millones para Facebook", xlab="Presupuesto de Inversion")
+
+#Facebook
+newFacebook=data.frame(facebook=c(300,320,338,350,400))# valores con los que se van a
+#predecir la concentración de Ozono
+predictionFacebook =predict(modeloFacebook,newFacebook,interval="prediction")# Intervalo de prediccion
+confidenceFacebook =predict(modeloFacebook,newFacebook,interval='confidence')# Intervalo de confianza del 95%
+matplot(newFacebook$facebook,cbind(predictionFacebook, confidenceFacebook[,-1]), lty=c(1,2,2,3,3),
+        type="l", ylab="Predicción de ventas en millones para Facebook", xlab="Presupuesto de Inversion")
+
+#Periodico
+newPeriodico=data.frame(periodico=c(116, 130, 180, 195, 210))# valores con los que se van a
+#predecir la concentración de Ozono
+predictionPeriodico =predict(modeloPeriodico,newPeriodico,interval="prediction")# Intervalo de prediccion
+confidencePeriodico =predict(modeloPeriodico,newPeriodico,interval='confidence')# Intervalo de confianza del 95%
+matplot(newPeriodico$periodico,cbind(predictionPeriodico, confidencePeriodico[,-1]), lty=c(1,2,2,3,3),
+        type="l", ylab="Predicción de ventas en millones para Periodico", xlab="Presupuesto de Inversion")
+
+#Instagram
+newInstagram=data.frame(instagram=c(52, 58, 63, 79, 81))# valores con los que se van a
+#predecir la concentración de Ozono
+predictionInstagram =predict(modeloInstagram,newInstagram,interval="prediction")# Intervalo de prediccion
+confidenceInstagram =predict(modeloInstagram,newInstagram,interval='confidence')# Intervalo de confianza del 95%
+matplot(newInstagram$instagram,cbind(predictionInstagram, confidenceInstagram[,-1]), lty=c(1,2,2,3,3),
+        type="l", ylab="Predicción de ventas en millones para Instagram", xlab="Presupuesto de Inversion")
+
+#Tv
+newTv=data.frame(tv=c(920, 970, 988, 52, 1020, 1100))# valores con los que se van a
+#predecir la concentración de Ozono
+predictionTv =predict(modeloTv,newTv,interval="prediction")# Intervalo de prediccion
+confidenceTv =predict(modeloTv,newTv,interval='confidence')# Intervalo de confianza del 95%
+matplot(newTv$tv,cbind(predictionTv, confidenceTv[,-1]), lty=c(1,2,2,3,3),
+        type="l", ylab="Predicción de ventas en millones para Tv", xlab="Presupuesto de Inversion")
+
+#Ebay
+newEbay=data.frame(ebay=c(2300, 2400, 2850, 3000, 3200))# valores con los que se van a
+#predecir la concentración de Ozono
+predictionEbay =predict(modeloEbay,newEbay,interval="prediction")# Intervalo de prediccion
+confidenceEbay =predict(modeloEbay,newEbay,interval='confidence')# Intervalo de confianza del 95%
+matplot(newEbay$ebay,cbind(predictionEbay, confidenceEbay[,-1]), lty=c(1,2,2,3,3),
+        type="l", ylab="Predicción de ventas en millones para Ebay", xlab="Presupuesto de Inversion")
